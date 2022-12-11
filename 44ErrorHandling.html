@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error-Handing</title>
+</head>
+
+<body>
+
+    <h1>Keep the console open to see the output !</h1>
+    <script>
+        // error = object with a description of 
+        //             something that went wrong
+
+        // throw = executes a user-defined error
+
+        try {
+            let x = window.prompt("Enter a #");
+            x = Number(x);
+
+            if (isNaN(x)) throw "That wasn't a number!";
+            if (x == "") throw "That was empty!";
+
+            console.log(`${x} is a number`);
+        }
+        catch (error) {
+            console.log(error);
+        }
+        finally {
+            console.log("This always executes");
+        }
+    </script>
+</body>
+
+</html>

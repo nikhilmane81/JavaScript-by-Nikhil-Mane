@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout()</title>
+</head>
+<body>
+    <button id="butt" style="color: black; background-color: red; font-size: xx-large;">Don't Click !</button>
+    <script>
+        // let pop1 = setTimeout(firstM, 1000);
+        // let pop2 = setTimeout(SecondM, 1000);
+        // let pop3 = setTimeout(ThirdM, 1000);
+
+        function firstM() {
+            alert("Why did you clicked? Don't click Ok");
+        }
+        function SecondM() {
+            alert("Why you are doing this ???");
+        }
+        function ThirdM() {
+            alert("AAAAAHHHHHH !!!!!");
+        }
+        document.getElementById("butt").onclick = function () {
+            let pop1 = setTimeout(firstM, 1000);
+            let pop2 = setTimeout(SecondM, 1000);
+            let pop3 = setTimeout(ThirdM, 1000);
+            pop1();
+            pop2();
+            pop3();
+            // clearTimeout(pop1);
+            // clearTimeout(pop2);
+            // clearTimeout(pop3);
+            window.alert("It was just a joke !");
+        }
+    </script>
+</body>
+
+</html>
