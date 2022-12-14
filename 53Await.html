@@ -1,0 +1,65 @@
+<!-- async = makes a function return a promise -->
+<!-- await = makes a function wait for promise -->
+<!-- Meaning await can only be used inside async function -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await</title>
+</head>
+
+<body>
+    <h1 id="head"></h1>
+    <script>
+        // Example 1 : Simplified
+        // async function loadFile() {
+        //     let filefound = true;
+        //     if (filefound) {
+        //         return "File found";
+        //     }
+        //     else {
+        //         throw "File not found";
+        //     }
+        // }
+        // async function display() {
+        //     try {
+        //         document.getElementById("head").innerHTML = await loadFile();
+        //     }
+        //     catch (error) {
+        //         document.getElementById("head").innerHTML = error;
+        //     }
+        // }
+        // display();
+
+        // Example 2 =>
+        async function loadFile() {
+
+            const promise = new Promise((resolve, reject) => {
+                let fileLoaded = true;
+
+                if (fileLoaded) {
+                    resolve("File loaded");
+                }
+                else {
+                    reject("File NOT loaded");
+                }
+            })
+
+            try {
+                document.getElementById("head").innerHTML = await promise;
+            }
+            catch (error) {
+                document.getElementById("head").innerHTML = error;
+            }
+        }
+        loadFile();
+
+    </script>
+</body>
+
+</html>
