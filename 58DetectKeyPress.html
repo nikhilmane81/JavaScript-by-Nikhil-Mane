@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press-the-Arrows</title>
+</head>
+<style>
+    #myDiv {
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        position: relative;
+    }
+</style>
+
+<body>
+<h1>Use Arrows keys to move this BOX !</h1>
+    <div id="myDiv"></div>
+
+    <script>
+        const myDiv = document.getElementById("myDiv");
+        window.addEventListener("keydown", move);
+        let x = 0;
+        let y = 0;
+
+        function move(event) {
+
+            switch (event.key) {
+                case "ArrowDown":
+                    y += 5;
+                    myDiv.style.top
+                        = y + "px";
+                    break;
+                case "ArrowUp":
+                    y -= 5;
+                    myDiv.style.top
+                        = y + "px";
+                    break;
+                case "ArrowRight":
+                    x += 5;
+                    myDiv.style.left = x + "px";
+                    break;
+                case "ArrowLeft":
+                    x -= 5;
+                    myDiv.style.left = x + "px";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

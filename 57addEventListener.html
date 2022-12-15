@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListner</title>
+</head>
+<style>
+    #innerdiv
+    {
+        background-color: lightblue;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+    }
+    #outerdiv
+    {
+        background-color: lightgreen;
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div id="outerdiv">
+        <div id="innerdiv"></div>
+    </div>
+    <script>
+        // .addEventListener(event, function, useCapture)
+        // You can add many event handlers to one element.
+        // Even the same event that invokes different functions
+
+        const innerDiv = document.getElementById("innerdiv");
+        const outerDiv = document.getElementById("outerdiv");
+
+        innerDiv.addEventListener("click", changeBlue);
+        outerDiv.addEventListener("click", changeBlue, true); //if two elements are sharing same space and listening to same event 
+        // by adding true while calling addEventListener you can set priority !
+
+        function changeBlue() {
+            alert(`You selected ${this.id}`);
+            this.style.backgroundColor = "lightblue"
+        }
+    </script>
+</body>
+
+</html>
